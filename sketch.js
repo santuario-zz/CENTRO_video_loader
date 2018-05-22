@@ -20,9 +20,10 @@
 
 // Video
 var video;
+var isLoaded;
 
 
-
+var angle = 0;
 /*
  *****************************************
  *****************************************
@@ -35,8 +36,8 @@ var video;
 function preload() {
 
   //Video
-    //video = createVideo("assets/videos/KLUSTERA_Insurgentes_YOLO.mov");
-    video = createVideo("assets/videos/centro.mov");
+  //video = createVideo("assets/videos/KLUSTERA_Insurgentes_YOLO.mov");
+
 
 
 }
@@ -76,7 +77,7 @@ function draw() {
 
 
 function initialize() {
-
+  isLoaded = false;
 
   initializeVideo();
 }
@@ -92,18 +93,31 @@ function initialize() {
 
 
 function initializeVideo() {
+  video = createVideo("assets/videos/centro.mov", videoLoaded);
 
+}
+
+function videoLoaded() {
+  isLoaded = true;
   video.loop();
   video.hide();
 }
 
-
-
 function drawVideo() {
 
 
+  if (isLoaded == true) {
+    image(video, 0, 0);
+  } else {
+    background(51);
+    translate(windowWidth / 2, windowHeight / 2);
+    rotate(angle);
+    strokeWeight(4);
+    stroke(255);
+    line(0, 0, 100, 0);
+    angle += 0.1;
+  }
 
-  image(video, 0, 0);
 
 
 
