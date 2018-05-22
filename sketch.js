@@ -101,7 +101,7 @@ function videoLoaded() {
   isLoaded = true;
   video.loop();
   video.pause();
-  video.play();
+  //video.play();
   video.hide();
 
 }
@@ -124,4 +124,9 @@ function drawVideo() {
 
 
 
+}
+
+
+function mousePressed(){
+    video.play();
 }
