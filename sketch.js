@@ -94,12 +94,15 @@ function initialize() {
 
 function initializeVideo() {
   video = createVideo("assets/videos/centro.mov", videoLoaded);
-  video.loop();
-  video.hide();
+
 }
 
 function videoLoaded() {
   isLoaded = true;
+  video.loop();
+  video.pause();
+  video.play();
+  video.hide();
 
 }
 
