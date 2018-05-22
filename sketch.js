@@ -20,7 +20,7 @@
 
 // Video
 var video;
-var isLoaded;
+var isLoaded = false;
 
 
 var angle = 0;
@@ -50,7 +50,7 @@ function windowResized() {
 
 function setup() {
   //createCanvas(600, 400);
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   initialize();
 
 
@@ -94,13 +94,13 @@ function initialize() {
 
 function initializeVideo() {
   video = createVideo("assets/videos/centro.mov", videoLoaded);
-
+  video.loop();
+  video.hide();
 }
 
 function videoLoaded() {
   isLoaded = true;
-  video.loop();
-  video.hide();
+
 }
 
 function drawVideo() {
