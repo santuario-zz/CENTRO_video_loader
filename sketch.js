@@ -6,7 +6,7 @@
  * 
  *;
  
- * URL: 
+ * URL: https://santuario.github.io/CENTRO_video_loader/
  */
 
 
@@ -35,7 +35,8 @@ var video;
 function preload() {
 
   //Video
-    video = createVideo("assets/videos/KLUSTERA_Insurgentes_YOLO.mov");
+    //video = createVideo("assets/videos/KLUSTERA_Insurgentes_YOLO.mov");
+    video = createVideo("assets/videos/centro.mov");
 
 
 }
